@@ -21,7 +21,7 @@ try:
 except Error as e:
     print(e)
 
-dailyMinTemp = pd.read_csv('resources/sample_temperature_data.csv', index_col=False, delimiter = ',') 
+dailyMinTemp = pd.read_csv('resources/daily-minimum-temperatures-in-me.csv', index_col=False, delimiter = ',') 
 
 dailyMinTemp.head()
 
@@ -38,7 +38,7 @@ try:
         cursor.execute("CREATE TABLE dailyTemperature(date DATE NOT NULL,min_temperature DECIMAL(6,2))") 
         print("Table is created....") 
         #loop through the data frame for i,row in empdata.iterrows(): #here %S means string values 
-        sql = "INSERT INTO americold.dailyTemperature VALUES (%s,%s,%s)" 
+        sql = "INSERT INTO americold.dailyTemperature VALUES (%s,%s)" 
     
         for i,j in dailyMinTemp.iterrows():
             now = j['Date'].split("/")
