@@ -9,7 +9,7 @@ status = ['Up', 'Down', 'maintenance']
 
 # Function to generate random data for temperature, pressure, and timestamp
 def generate_data():
-    temperature = round(random.uniform(10, 70), 2)  # Temperature between 10°C and 40°C
+    temperature = round(random.uniform(10, 60), 2)  # Temperature between 10°C and 40°C
     pressure = round(random.uniform(800, 1200), 2)  # Pressure between 800 hPa and 1200 hPa
     timestamp = datetime.now() - timedelta(days=random.randint(0, 20))
     return temperature, pressure, timestamp

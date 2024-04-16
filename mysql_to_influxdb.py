@@ -53,7 +53,7 @@ def migrate_data():
                 "time": int(epochTime)
             }
             point = influxdb_client.Point.from_dict(dictionary, influxdb_client.WritePrecision.S)
-            write_api.write(bucket='Rochelle_SQL', org='Americold', record=point)
+            write_api.write(bucket='Rochelle', org='Americold', record=point)
 
     write_api.flush()
     # Write data to InfluxDB
